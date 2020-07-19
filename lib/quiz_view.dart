@@ -4,22 +4,53 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class QuizView extends StatefulWidget {
-  bool showCorrect;
-  String question;
-  String questionTag;
-  Color questionColor;
-  Color backgroundColor;
-  Widget image;
-  double width;
-  double height;
-  String rightAnswer;
-  List<String> wrongAnswers;
-  Color tagBackgroundColor;
-  Color tagColor;
-  Color answerColor;
-  Color answerBackgroundColor;
-  void Function() onRightAnswer;
-  void Function() onWrongAnswer;
+  // Boolean to show the correct answer after the quiz is answered
+  final bool showCorrect;
+
+  // The question
+  final String question;
+
+  // The questonTag (question number or id)
+  final String questionTag;
+
+  // Color of question font
+  final Color questionColor;
+
+  // Background color
+  final Color backgroundColor;
+
+  // Image if any
+  final Widget image;
+
+  // Width of the quiz view
+  final double width;
+
+  // Height of the quiz view
+  final double height;
+
+  // The right answer
+  final String rightAnswer;
+
+  // The wrong answers
+  final List<String> wrongAnswers;
+
+  // Question Tag background color
+  final Color tagBackgroundColor;
+
+  // Question Tag font color
+  final Color tagColor;
+
+  // Answer font color
+  final Color answerColor;
+
+  // Answer background color
+  final Color answerBackgroundColor;
+
+  // This function is executed if the answer is right
+  final void Function() onRightAnswer;
+
+  // This function is executed if the answer is wrong
+  final void Function() onWrongAnswer;
 
   QuizView(
       {this.showCorrect = true,
