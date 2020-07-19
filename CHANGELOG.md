@@ -29,3 +29,7 @@
 ## [1.0.2] - Release
 
 * A customizable quiz view widget.
+
+## [1.0.3] - Release
+
+* A customizable quiz view widget.
