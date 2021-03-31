@@ -96,11 +96,17 @@ class _QuizViewState extends State<QuizView> {
       answerColumn.children.add(Container(
         width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.all(15),
-        child: RaisedButton(
-          padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-          shape: StadiumBorder(),
-          color: widget.answerBackgroundColor,
-          textColor: Colors.white,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.resolveWith(
+                (states) => widget.answerBackgroundColor),
+            padding: MaterialStateProperty.resolveWith(
+                (states) => EdgeInsets.fromLTRB(20, 10, 20, 10)),
+            shape:
+                MaterialStateProperty.resolveWith((states) => StadiumBorder()),
+            textStyle: MaterialStateProperty.resolveWith(
+                (states) => TextStyle(color: Colors.white)),
+          ),
           child: Center(
             child: Text(
               i,
@@ -129,10 +135,15 @@ class _QuizViewState extends State<QuizView> {
         Container(
           width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.all(15),
-          child: RaisedButton(
-            padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-            shape: StadiumBorder(),
-            color: isTapped ? Colors.green : widget.answerBackgroundColor,
+          child: ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.resolveWith((states) =>
+                  isTapped ? Colors.green : widget.answerBackgroundColor),
+              padding: MaterialStateProperty.resolveWith(
+                  (states) => EdgeInsets.fromLTRB(20, 10, 20, 10)),
+              shape: MaterialStateProperty.resolveWith(
+                  (states) => StadiumBorder()),
+            ),
             child: Center(
               child: Text(
                 widget.rightAnswer,
