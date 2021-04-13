@@ -143,6 +143,8 @@ class _QuizViewState extends State<QuizView> {
                   (states) => EdgeInsets.fromLTRB(20, 10, 20, 10)),
               shape: MaterialStateProperty.resolveWith(
                   (states) => StadiumBorder()),
+              textStyle: MaterialStateProperty.resolveWith(
+                  (states) => TextStyle(color: Colors.white)),
             ),
             child: Center(
               child: Text(

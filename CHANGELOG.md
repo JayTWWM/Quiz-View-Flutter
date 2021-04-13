@@ -37,3 +37,7 @@
 ## [1.0.4] - Release
 
 * A customizable quiz view widget.
+
+## [1.0.5] - Release
+
+* A customizable quiz view widget.
