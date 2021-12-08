@@ -11,7 +11,7 @@ class QuizView extends StatefulWidget {
   final String question;
 
   /// The questonTag (question number or id)
-  final String questionTag;
+  final String? questionTag;
 
   /// Color of question font
   final Color questionColor;
@@ -20,7 +20,7 @@ class QuizView extends StatefulWidget {
   final Color backgroundColor;
 
   /// Image if any
-  final Widget image;
+  final Widget? image;
 
   /// Width of the quiz view
   final double width;
@@ -55,20 +55,20 @@ class QuizView extends StatefulWidget {
   QuizView(
       {this.showCorrect = true,
       this.questionTag,
-      @required this.question,
+      required this.question,
       this.questionColor = Colors.black,
       this.backgroundColor = Colors.white,
       this.image,
-      @required this.height,
-      @required this.width,
-      @required this.rightAnswer,
-      @required this.wrongAnswers,
+      required this.height,
+      required this.width,
+      required this.rightAnswer,
+      required this.wrongAnswers,
       this.tagColor = Colors.black,
       this.tagBackgroundColor = Colors.white,
       this.answerColor = Colors.black,
       this.answerBackgroundColor = Colors.white,
-      @required this.onRightAnswer,
-      @required this.onWrongAnswer});
+      required this.onRightAnswer,
+      required this.onWrongAnswer});
 
   _QuizViewState createState() => _QuizViewState();
 }
@@ -78,7 +78,7 @@ class _QuizViewState extends State<QuizView> {
 
   bool isTapped = false;
   static Random _random = new Random();
-  int answerIndex;
+  late int answerIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -201,7 +201,7 @@ class _QuizViewState extends State<QuizView> {
                                     : widget.width / 20),
                           )),
                       child: Text(
-                        widget.questionTag,
+                        widget.questionTag!,
                         style: TextStyle(
                             color: widget.tagColor,
                             fontWeight: FontWeight.bold,
@@ -238,7 +238,7 @@ class _QuizViewState extends State<QuizView> {
                                             : widget.height / 20),
                                   )),
                                 ),
-                                widget.image,
+                                widget.image!,
                                 answerColumn
                               ]
                             : [
@@ -282,7 +282,7 @@ class _QuizViewState extends State<QuizView> {
                                       : widget.height / 20),
                             )),
                           ),
-                          widget.image,
+                          widget.image!,
                           answerColumn
                         ]
                       : [
