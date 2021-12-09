@@ -1,11 +1,12 @@
 name: quiz_view
 description: A new flutter package which allows you to host your own quiz, customize the user interface, theme , functionalities, question, correct answer and on click function for answers.
 version: 1.0.5
-author: Jay Mehta <jaymehta262001@gmail.com>
+creator: Jay Mehta <jaymehta262001@gmail.com>
+contributer: Muhammad Hassan Raza <shthassanraza@hotmail.com>
 homepage: https://github.com/JayTWWM/Quiz-View-Flutter
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
